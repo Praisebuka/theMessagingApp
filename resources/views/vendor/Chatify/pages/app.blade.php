@@ -26,18 +26,30 @@
            {{-- Lists [Users/Group] --}}
            {{-- ---------------- [ User Tab ] ---------------- --}}
            <div class="show messenger-tab users-tab app-scroll" data-view="users">
+
                {{-- Favorites --}}
                <div class="favorites-section">
-                <p class="messenger-title"><span>Favorites</span></p>
-                <div class="messenger-favorites app-scroll-hidden"></div>
+                    <p class="messenger-title"><span>Favorites</span></p>
+                    <div class="messenger-favorites app-scroll-hidden"></div>
                </div>
+
+
                {{-- Saved Messages --}}
                <p class="messenger-title"><span>Your Space</span></p>
                {!! view('Chatify::layouts.listItem', ['get' => 'saved']) !!}
+
+               
                {{-- Contact --}}
                <p class="messenger-title"><span>All Messages</span></p>
                <div class="listOfContacts" style="width: 100%;height: calc(100% - 272px);position: relative;"></div>
+               <p>List of users</p>
+               <p>List of users</p>
+               <p>List of users</p>
+               <p>List of users</p>
            </div>
+
+
+
              {{-- ---------------- [ Search Tab ] ---------------- --}}
            <div class="messenger-tab search-tab app-scroll" data-view="search">
                 {{-- items --}}
@@ -48,6 +60,8 @@
              </div>
         </div>
     </div>
+
+
 
     {{-- ----------------------Messaging side---------------------- --}}
     <div class="messenger-messagingView">

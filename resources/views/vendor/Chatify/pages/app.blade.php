@@ -45,7 +45,7 @@
                <p>List of users</p>
                <div class="messenger-favorites app-scroll-hidden"></div>
 
-               <p>List of users</p>
+               <p>List of users</p>   
                <p>List of users</p>
                <div class="listOfContacts" style="width: 100%;height: calc(100% - 272px);position: relative;"></div>
                

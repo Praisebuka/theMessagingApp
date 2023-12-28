@@ -3,6 +3,9 @@
 
 <?php 
 $id = Auth::user()->id;
+
+use App\Models\User;
+$getAllUsers = User::all();
 ?>
 
 

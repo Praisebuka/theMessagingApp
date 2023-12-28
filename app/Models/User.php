@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
 
 class User extends Authenticatable
 {
@@ -43,3 +45,6 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 }
+
+
+require_once base_path('database/factories/UserFactory.php');

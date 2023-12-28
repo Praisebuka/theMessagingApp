@@ -1,4 +1,20 @@
 @include('Chatify::layouts.headLinks')
+@php
+$get = 'users';
+$lastMessage = Auth::user();
+$lastMessage->from_id == Auth::user()->id;
+
+use App\Models\User;
+use App\Models\ChMessage;
+
+$getAllUsers = User::all();
+// $getTheMessagesTIme->from_id = ChMessage::all();
+
+
+@endphp
+
+{{-- {{ dd($getAllUsers) }} --}}
+
 <div class="messenger">
 
     {{-- ----------------------Users/Groups lists side---------------------- --}}
@@ -40,13 +56,58 @@
  
 
                {{-- Contact --}}
-               <p class="messenger-title"><span>All Messages</span></p>
-               <p>List of users</p>
-               <p>List of users</p>
-               <div class="messenger-favorites app-scroll-hidden"></div>
+               <p class="messenger-title"><span>All Messages</span></p> 
+                @if($get == 'users' && !!$lastMessage)
+                <?php
+                $lastMessageBody = mb_convert_encoding($lastMessage->body, 'UTF-8', 'UTF-8');
+                $lastMessageBody = strlen($lastMessageBody) > 30 ? mb_substr($lastMessageBody, 0, 30, 'UTF-8').'..' : $lastMessageBody;
+                ?>
+                @foreach ($getAllUsers as $getAUser)
+                {{-- {{ dd($getAUser) }} --}} 
+                    <table class="messenger-list-item" data-contact="{{ $getAUser->id }}">
+                        <tr data-action="0">
+                            {{-- Avatar side --}}
+                            <td style="position: relative">
+                                @if($getAUser->active_status)
+                                    <span class="activeStatus"></span>
+                                @endif
+                            <div class="avatar av-m chatify"
+                            style="background-image: url('{{ Chatify::getUserWithAvatar($getAUser)->avatar }}');">
+                            </div>
+                            </td>
 
-               <p>List of users</p>
-               <p>List of users</p>
+                            {{-- center side --}}
+                            <td>
+
+                            <p data-id="{{ $getAUser->id }}" data-type="user">
+                                {{ strlen($getAUser->name) > 12 ? trim(substr($getAUser->name,0,12)).'..' : $getAUser->name }}
+                                <span class="contact-item-time" data-time="{{$lastMessage->created_at}}">{{ $lastMessage->timeAgo }}</span></p>
+                            <span>
+                                {{-- Last Message user indicator --}}
+                                {!!
+                                    $lastMessage->from_id == Auth::user()->id
+                                    ? '<span class="lastMessageIndicator">You :</span>'
+                                    : ''
+                                !!}
+                                {{-- Last message body --}}
+                                @if($lastMessage->attachment == null)
+                                {!!
+                                    $lastMessageBody
+                                !!}
+                                @else
+                                <span class="fas fa-file"></span> Attachment
+                                @endif
+                            </span>
+
+                            {{-- New messages counter --}}
+                                {{-- {!! $unseenCounter > 0 ? "<b>".$unseenCounter."</b>" : '' !!} --}}
+                            </td>
+                        </tr>
+                        
+                    </table>
+                @endforeach
+                @endif
+               <div class="messenger-favorites app-scroll-hidden"></div>
                <div class="listOfContacts" style="width: 100%;height: calc(100% - 272px);position: relative;"></div>
                
            </div>
@@ -61,6 +122,7 @@
                     <p class="message-hint center-el"><span>Type to search..</span></p>
                 </div>
              </div>
+
         </div>
     </div>
 
@@ -71,6 +133,7 @@
         {{-- header title [conversation name] amd buttons --}}
         <div class="m-header m-header-messaging">
             <nav class="chatify-d-flex chatify-justify-content-between chatify-align-items-center">
+
                 {{-- header back button, avatar and user name --}}
                 <div class="chatify-d-flex chatify-justify-content-between chatify-align-items-center">
                     <a href="#" class="show-listView"><i class="fas fa-arrow-left"></i></a>
@@ -115,6 +178,8 @@
         {{-- Send Message Form --}}
         @include('Chatify::layouts.sendForm')
     </div>
+
+    
     {{-- ---------------------- Info side ---------------------- --}}
     <div class="messenger-infoView app-scroll">
         {{-- nav actions --}}
@@ -124,6 +189,7 @@
         </nav>
         {!! view('Chatify::layouts.info')->render() !!}
     </div>
+
 </div>
 
 @include('Chatify::layouts.modals')

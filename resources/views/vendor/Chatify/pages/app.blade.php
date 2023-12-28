@@ -33,19 +33,22 @@
                     <div class="messenger-favorites app-scroll-hidden"></div>
                </div>
 
-
+ 
                {{-- Saved Messages --}}
                <p class="messenger-title"><span>Your Space</span></p>
                {!! view('Chatify::layouts.listItem', ['get' => 'saved']) !!}
 
-               
+
                {{-- Contact --}}
                <p class="messenger-title"><span>All Messages</span></p>
+               <p>List of users</p>
+               <p>List of users</p>
+               <div class="messenger-favorites app-scroll-hidden"></div>
+
+               <p>List of users</p>
+               <p>List of users</p>
                <div class="listOfContacts" style="width: 100%;height: calc(100% - 272px);position: relative;"></div>
-               <p>List of users</p>
-               <p>List of users</p>
-               <p>List of users</p>
-               <p>List of users</p>
+               
            </div>
 
 

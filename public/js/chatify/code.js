@@ -463,6 +463,7 @@ function sendMessage() {
         // remove message hint
         $(".messages").find(".message-hint").hide();
         // append a temporary message card
+
         if (hasFile) {
           messagesContainer
             .find(".messages")
@@ -477,6 +478,7 @@ function sendMessage() {
             .find(".messages")
             .append(sendTempMessageCard(inputValue, tempID));
         }
+
         // scroll to bottom
         scrollToBottom(messagesContainer);
         messageInput.css({ height: "42px" });
@@ -490,6 +492,8 @@ function sendMessage() {
           // message card error status
           errorMessageCard(tempID);
           console.error(data.error_msg);
+
+          // console.log("the message went");
         } else {
           // update contact item
           updateContactItem(getMessengerId());

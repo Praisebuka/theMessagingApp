@@ -1,4 +1,10 @@
 <title>{{ config('chatify.name') }}</title>
+{{-- {{ dd(Auth::user()) }} --}}
+
+<?php 
+$id = Auth::user()->id;
+?>
+
 
 {{-- Meta tags --}}
 <meta name="viewport" content="width=device-width, initial-scale=1">

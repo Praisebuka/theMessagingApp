@@ -13,7 +13,7 @@ $getAllUsers = User::all();
 
 @endphp
 
-{{-- {{ dd($getAllUsers) }} --}}
+{{-- {{ dd($getAllUsers) }} --}}    
 
 <div class="messenger">
 

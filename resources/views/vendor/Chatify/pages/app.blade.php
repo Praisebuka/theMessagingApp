@@ -12,7 +12,7 @@ $getAllUsers = User::all();
 
 
 @endphp
-
+ 
 {{-- {{ dd($getAllUsers) }} --}}       
 
 

@@ -16,6 +16,7 @@ $getAllUsers = User::all();
         {{-- {{ dd($getAllUsers) }} --}}       
 
 
+        
 <div class="messenger">
 
     {{-- ----------------------Users/Groups lists side---------------------- --}}

@@ -782,7 +782,7 @@ function sendContactItemUpdates(status) {
     update: status,
   });
 }
-
+  
 /**
  *-------------------------------------------------------------
  * Trigger message delete
@@ -807,7 +807,7 @@ function sendDeleteConversationEvent() {
 
 /**
  *-------------------------------------------------------------
- * Check internet connection using pusher states
+ * Check internet connection using pusher states   
  *-------------------------------------------------------------
  */
 function checkInternet(state, selector) {

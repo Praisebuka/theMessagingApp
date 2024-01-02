@@ -16,7 +16,7 @@ $getAllUsers = User::all();
         {{-- {{ dd($getAllUsers) }} --}}       
 
 
-        
+
 <div class="messenger">
 
     {{-- ----------------------Users/Groups lists side---------------------- --}}
@@ -57,7 +57,7 @@ $getAllUsers = User::all();
                {!! view('Chatify::layouts.listItem', ['get' => 'saved']) !!}
  
 
-               {{-- Contact --}}
+               {{-- Messages --}}
                <p class="messenger-title"><span>All Messages</span></p> 
                 @if($get == 'users' && !!$lastMessage)
                 <?php
@@ -109,8 +109,7 @@ $getAllUsers = User::all();
                     </table>
                 @endforeach
                 @endif
-               <div class="messenger-favorites app-scroll-hidden"></div>
-               <div class="listOfContacts" style="width: 100%;height: calc(100% - 272px);position: relative;"></div>
+               {{-- <div class="messenger-favorites app-scroll-hidden"></div> --}}
                
            </div>
 

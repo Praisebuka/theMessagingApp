@@ -804,7 +804,7 @@ function sendDeleteConversationEvent() {
     to: getMessengerId(),
   });
 }
-
+    
 /**
  *-------------------------------------------------------------
  * Check internet connection using pusher states      

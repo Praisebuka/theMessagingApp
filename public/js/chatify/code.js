@@ -809,7 +809,7 @@ function sendDeleteConversationEvent() {
  *-------------------------------------------------------------
  * Check internet connection using pusher states      
  *-------------------------------------------------------------
- */
+ */   
 function checkInternet(state, selector) {
   let net_errs = 0;  
   const messengerTitle = $(".messenger-headTitle");

@@ -23,7 +23,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 // Route::get('/messages', function () {
-//     return view('vendor/chatify/pages/app');
+//     return view('vendor/chatify/pages/app');   
 // })->name('messages');
 
 Route::middleware('auth')->group(function () {

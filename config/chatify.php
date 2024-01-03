@@ -67,7 +67,7 @@ return [
     | Gravatar
     |
     | imageset property options:
-    | [ 404 | mp | identicon (default) | monsterid | wavatar ]
+    | [ 404 | mp | identicon (default) | monsterid | wavatar ] 
     |-------------------------------------
     */
     'gravatar' => [

@@ -45,7 +45,7 @@ $getAllUsers = User::all();
            {{-- ---------------- [ User Tab ] ---------------- --}}
            <div class="show messenger-tab users-tab app-scroll" data-view="users">
 
-               {{-- Favorites --}}
+               {{-- Favorites --}}    
                <div class="favorites-section">
                     <p class="messenger-title"><span>Favorites</span></p>
                     <div class="messenger-favorites app-scroll-hidden"></div>

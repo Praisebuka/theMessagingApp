@@ -9,7 +9,7 @@
             </div>
             </td>
             {{-- center side --}}
-            <td>
+            <td>   
                 <p data-id="{{ Auth::user()->id }}" data-type="user">Saved Messages <span>You</span></p>
                 <span>Save messages secretly</span>
             </td>

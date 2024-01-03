@@ -51,7 +51,7 @@ $getAllUsers = User::all();
                     <div class="messenger-favorites app-scroll-hidden"></div>
                </div>
 
- 
+  
                {{-- Saved Messages --}}
                <p class="messenger-title"><span>Your Space</span></p>
                {!! view('Chatify::layouts.listItem', ['get' => 'saved']) !!}

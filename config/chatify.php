@@ -64,7 +64,7 @@ return [
 
     /*
     |-------------------------------------
-    | Gravatar
+    | Gravatar   
     |
     | imageset property options:
     | [ 404 | mp | identicon (default) | monsterid | wavatar ] 
